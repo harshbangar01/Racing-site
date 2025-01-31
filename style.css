@@ -12,10 +12,26 @@ html, body {
     height: 100%;
     width: 100%;
 }
+*::selection {
+    background-color: #fff;
+    color: #fff;
+  }
+  
+  body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background: #000;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #fff;
+  
+    border-radius: 50px;
+  }
+
 #cursor {
     height: 20px;
     width: 20px;
-    background-color: #95c11e;
+    background-color: #fff;
     border-radius: 50%;
     position: fixed;
     z-index: 99;
@@ -24,7 +40,7 @@ html, body {
 #cursor-blur {
     height: 400px;
     width: 400px;
-    background-color: #96c11e2b;
+    background-color: #ffffff29;
     border-radius: 50%;
     position: fixed;
     filter: blur(50px);
@@ -86,7 +102,7 @@ video{
     color: #000;
     top: -5px;
     left: -5px;
-    -webkit-text-stroke: 1.5px #95c11e;
+    -webkit-text-stroke: 1.5px #fff;
     z-index: -1;
 }
 
@@ -105,4 +121,140 @@ video{
 #page2{
     height: 100vh;
     width: 100%;z-index: 10;
+}
+#scroller {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+}
+
+
+#scroller h4 {
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    margin-right: 10px;
+    transition: all linear 0.5s;
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+}
+
+#scroller h4:hover{
+    color: #fff;
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px;
+    position: relative;
+}
+
+#about-us img {
+    height: 220px;
+    width: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+#about-us-in{
+    width: 40%;
+    text-align: center;
+}
+
+#about-us-in h3 {
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+#about-us-in p{
+    font-size: 20px;
+    line-height: 26px;
+}
+
+#cards-container{
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+
+.card{
+    height: 80%;
+    width: 24%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card1{
+    background-image: url(https://images.unsplash.com/photo-1653249257370-ec7ba9ded2d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZjElMjB0cmFja3xlbnwwfHwwfHx8MA%3D%3D);
+}
+
+#card2{
+    background-image: url(https://i.pinimg.com/736x/50/b6/88/50b6886fa4159c51e148aee5bf36f64b.jpg);
+}
+
+#card3{
+    background-image: url(https://images.unsplash.com/photo-1666105847232-9bb3f235e878?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZjElMjBhZHZlbnR1cmV8ZW58MHx8MHx8fDA%3D);
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    padding: 30px;
+    padding-top: 160px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+.overlay h4{
+    color: #000;
+    font-size: 30px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+.overlay p{
+    color: #000;
+    font-size: 18px;
+}
+
+.card:hover .overlay{
+    opacity: 1;
+}
+
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
 }
