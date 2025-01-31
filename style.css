@@ -428,3 +428,7 @@ video{
     margin-bottom: 8px;
   }
 
+i {
+    height: 50px;
+    width: 50px;
+}
