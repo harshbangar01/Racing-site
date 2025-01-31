@@ -20,7 +20,7 @@ html, body {
    align-items: center;
    padding: 0 150px;
    position: fixed;
-   gap: 50px;
+   gap: 65px;
    justify-content: flex-start;
    z-index: 99;
 }
